@@ -1,21 +1,138 @@
 {% load static %}
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Django Website</title>
+    <title>Wallet Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Django Website</h1>
-    </header>
-    <main>
-        <p>This is a simple webpage built with Django, HTML, and CSS.</p>
-    </main>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wallet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#salary">Salary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#expenses">Expenses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Dashboard Section -->
+        <section id="dashboard">
+            <h2 class="text-center">Dashboard</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-header">Total Salary</div>
+                        <div class="card-body">
+                            <h5 class="card-title">$5000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-danger mb-3">
+                        <div class="card-header">Total Expenses</div>
+                        <div class="card-body">
+                            <h5 class="card-title">$2000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Total Savings</div>
+                        <div class="card-body">
+                            <h5 class="card-title">$3000</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Salary Section -->
+        <section id="salary" class="mt-5">
+            <h2 class="text-center">Manage Salary</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="salaryAmount" class="form-label">Enter Monthly Salary</label>
+                    <input type="number" class="form-control" id="salaryAmount" placeholder="e.g., 5000">
+                </div>
+                <button type="submit" class="btn btn-success">Save Salary</button>
+            </form>
+        </section>
+
+        <!-- Expenses Section -->
+        <section id="expenses" class="mt-5">
+            <h2 class="text-center">Track Expenses</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="expenseCategory" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="expenseCategory" placeholder="e.g., Food, Rent">
+                </div>
+                <div class="mb-3">
+                    <label for="expenseAmount" class="form-label">Amount</label>
+                    <input type="number" class="form-control" id="expenseAmount" placeholder="e.g., 200">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Expense</button>
+            </form>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="mt-5">
+            <h2 class="text-center">Transaction History</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2024-12-01</td>
+                        <td>Food</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2024-12-02</td>
+                        <td>Rent</td>
+                        <td>$800</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Wallet App. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

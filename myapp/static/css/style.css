@@ -1,17 +1,116 @@
+/* Général */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Couleur de fond claire */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #333;
-    color: white;
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #ffffff; /* Fond blanc des sections */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres des sections */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #343a40;
     text-align: center;
-    padding: 10px;
+    text-transform: uppercase;
 }
 
-main {
-    padding: 20px;
+/* Formulaires */
+form .form-control {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form button {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Tableau */
+table {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Cartes (Dashboard) */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+/* Pied de page */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
 }
