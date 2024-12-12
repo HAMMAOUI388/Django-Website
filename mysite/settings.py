@@ -58,11 +58,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = "mysite.urls"
 
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            BASE_DIR / 'templates',  # Ensure this is where your index.html is stored
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +75,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 
 WSGI_APPLICATION = "mysite.wsgi.application"
@@ -88,6 +91,8 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+
 
 
 # Password validation
@@ -135,7 +140,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp', 'static')]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Default backend
 ]
+

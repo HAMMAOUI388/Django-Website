@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import UserLogin
+from .models import UserLogin, Wallet, Expense, Transaction
 
 # Unregister the default User model from the admin
 admin.site.unregister(User)
