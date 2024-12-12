@@ -1,7 +1,6 @@
-/* Général */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* Couleur de fond claire */
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
@@ -21,7 +20,7 @@ section {
     padding: 40px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    background-color: #ffffff; /* Fond blanc des sections */
+    background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -109,7 +108,6 @@ footer p {
     .card {
         margin-bottom: 20px;
     }
-    
     section h2 {
         font-size: 1.5rem;
     }

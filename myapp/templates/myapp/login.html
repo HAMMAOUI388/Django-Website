@@ -38,7 +38,7 @@
         <div class="row w-100">
             <div class="col-lg-6 d-none d-lg-block">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                     class="img-fluid" alt="Login Illustration">
+                    class="img-fluid" alt="Login Illustration">
             </div>
             <div class="col-lg-6">
                 <div class="form-container">
@@ -55,19 +55,16 @@
                             {% endfor %}
                         {% endif %}
                     
-                        <!-- Username Input -->
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
                         </div>
 
-                        <!-- Password Input -->
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
                         </div>
 
-                        <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary w-100">Login</button>
                         <p class="mt-3 text-center">Don't have an account? <a href="{% url 'register' %}" class="link-primary">Register here</a></p>
                     </form>

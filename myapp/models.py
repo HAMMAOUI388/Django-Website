@@ -6,16 +6,13 @@ from django.contrib.auth.models import User
 class UserLogin(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ip_address = models.GenericIPAddressField(null=True, blank=True)
-    user_agent = models.CharField(max_length=255, blank=True, null=True)  # New field for browser info
+    user_agent = models.CharField(max_length=255, blank=True, null=True)
     login_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.user.email} - {self.login_time} - {self.user_agent}"
 
 
-
-
-# Wallet Model
 class Wallet(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="wallet")
     salary = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
@@ -30,7 +27,6 @@ class Wallet(models.Model):
         self.savings = self.salary - self.expenses
         self.save()
 
-# Transaction Model
 class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="transactions")
     amount = models.DecimalField(max_digits=10, decimal_places=2)
@@ -43,7 +39,7 @@ class Transaction(models.Model):
 
 
 class Expense(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)  # Set to non-nullable after migration
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     category = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateField(auto_now_add=True)

@@ -38,7 +38,7 @@
         <div class="row w-100">
             <div class="col-lg-6 d-none d-lg-block">
                 <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg"
-                     class="img-fluid" alt="Register Illustration">
+                    class="img-fluid" alt="Register Illustration">
             </div>
             <div class="col-lg-6">
                 <div class="form-container">
@@ -55,31 +55,26 @@
                             </div>
                         {% endif %}
                         
-                        <!-- Username Field -->
                         <div class="mb-3">
                             <label for="id_username" class="form-label">Username</label>
                             <input type="text" name="username" id="id_username" class="form-control" placeholder="Enter your username" required>
                         </div>
                         
-                        <!-- Email Field -->
                         <div class="mb-3">
                             <label for="id_email" class="form-label">Email address</label>
                             <input type="email" name="email" id="id_email" class="form-control" placeholder="Enter your email" required>
                         </div>
                         
-                        <!-- Password Field -->
                         <div class="mb-3">
                             <label for="id_password" class="form-label">Password</label>
                             <input type="password" name="password" id="id_password" class="form-control" placeholder="Enter your password" required>
                         </div>
                         
-                        <!-- Confirm Password Field -->
                         <div class="mb-3">
                             <label for="id_confirm_password" class="form-label">Confirm Password</label>
                             <input type="password" name="confirm_password" id="id_confirm_password" class="form-control" placeholder="Confirm your password" required>
                         </div>
                         
-                        <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary w-100">Register</button>
                         <p class="mt-3 text-center">Already have an account? <a href="{% url 'login' %}" class="link-primary">Login here</a></p>
                     </form>
@@ -96,7 +91,7 @@
     
             form.addEventListener('submit', (event) => {
                 if (password.value !== confirmPassword.value) {
-                    event.preventDefault(); // Prevent form submission
+                    event.preventDefault();
                     alert('Passwords do not match!');
                     confirmPassword.focus();
                 }

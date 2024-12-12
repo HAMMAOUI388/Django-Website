@@ -3,8 +3,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from .models import Expense
 
-
-
 class ExpenseForm(forms.ModelForm):
     class Meta:
         model = Expense
@@ -20,20 +18,17 @@ class RegisterForm(UserCreationForm):
         'placeholder': 'Enter your email address',
     }))
 
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+class Meta:
+    model = User
+    fields = ['username', 'email', 'password1', 'password2']
 
 class EmailAuthenticationForm(AuthenticationForm):
     username = forms.EmailField(
-        label="Email", 
+        label="Email",
         widget=forms.EmailInput(attrs={'autofocus': True}),
         error_messages={'required': 'Email is required.'}
     )
 
-
-
-
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=150)  # Username field
+    username = forms.CharField(max_length=150)
     password = forms.CharField(widget=forms.PasswordInput)

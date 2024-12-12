@@ -8,10 +8,10 @@ import grappelli.urls as grappelli_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('grappelli/', include(grappelli_urls)),
+
     path('index/', views.dashboard_view, name='index'),
     path('', views.register, name='register'),
     path('login/', views.login_view, name='login'),
-
-    path('index/', views.dashboard_view, name='dashboard'),  # Make sure this URL pattern exists
+    path('index/', views.dashboard_view, name='dashboard'),
 
 ]
